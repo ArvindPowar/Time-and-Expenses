@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/QAPage"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>objective c - How to check internet connection on iOS device? - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">    
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How to check internet connection on iOS device?">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I'm wondering how I can check if the user is connect to internet through WIFI or cellular data 3G or 4G.
+
+Also I don't want to check if a website is reachable or not, the thing that I want to check...">
+    <meta property="og:url" content="http://stackoverflow.com/questions/31742601/how-to-check-internet-connection-on-ios-device">
+    <link rel="canonical" href="http://stackoverflow.com/questions/31742601/how-to-check-internet-connection-on-ios-device">
+
+    
+    
+    <script src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/ados" async="" type="text/javascript"></script><script src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/quant.js" async=""></script><script src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/beacon.js" async=""></script><script src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/analytics.js" async=""></script><script src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/ados.js" async="" type="text/javascript"></script><script src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/jquery.js"></script>
+    <script src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question 'How to check internet connection on iOS device?'" href="http://stackoverflow.com/feeds/question/31742601">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/31742601/how-to-check-internet-connection-on-ios-device">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/31742601/how-to-check-internet-connection-on-ios-device">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/31742601/how-to-check-internet-connection-on-ios-device">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:2,shownCommentCount:2,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:31742601});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '31742601');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1459497028,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableSocialMediaInSharePopup":true},"user":{"fkey":"3ac3606021f8409c62a06cd41252fa6c","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"96dfd4baf5b5","js/moderator.en.js":"58d44fe14446","js/full-anon.en.js":"d65eaaa38bcf","js/full.en.js":"0fc4bf93d696","js/wmd.en.js":"0ad0b391bd78","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"28c5ebbf43e7","js/help.en.js":"c8004cc0095d","js/tageditor.en.js":"9c6df10dabc4","js/tageditornew.en.js":"31b09e51a455","js/inline-tag-editing.en.js":"943c7090ea55","js/revisions.en.js":"2faaeaae2529","js/review.en.js":"2d935fb55fee","js/tagsuggestions.en.js":"7dfec0d2a2d7","js/post-validation.en.js":"3b290a1bda10","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"1de47fac687b","js/keyboard-shortcuts.en.js":"8a02ce46c56f","js/external-editor.en.js":"6fb6f25dfe94","js/external-editor.en.js":"6fb6f25dfe94","js/snippet-javascript.en.js":"50d877223113","js/snippet-javascript-codemirror.en.js":"751ad97d3f5d"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/full-anon.js" async=""></script><script src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/snippet-javascript.js" async=""></script><script src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/post-validation.js" async=""></script><script src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/prettify-full.js" async=""></script><script src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/external-editor.js" async=""></script><script src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/unikong.js" async=""></script><link rel="stylesheet" type="text/css" href="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/unikong.css"><script src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/adFeedback.js" type="text/javascript"></script><link href="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/adFeedback.css" rel="stylesheet"></head>
+<body class="question-page new-topbar">
+    <noscript><div id="noscript-padding"></div></noscript>
+    
+        <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f31742601%2fhow-to-check-internet-connection-on-ios-device" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f31742601%2fhow-to-check-internet-connection-on-ios-device" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com/" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 154 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+    <a href="#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="#" class="topbar-icon icon-achievements yes-hover js-achievements-button " data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f31742601%2fhow-to-check-internet-connection-on-ios-device" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f31742601%2fhow-to-check-internet-connection-on-ios-device" class="login-link">log in</a>
+
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                            <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                        About Us
+                        <span class="item-summary">
+                            Learn more about Stack Overflow the company
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://business.stackoverflow.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                        Business
+                        <span class="item-summary">
+                            Learn more about hiring developers or posting ads with us
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="Search Q&amp;A" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="http://stackoverflow.com/jobs">Jobs</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                                            </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+<div id="herobox">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Stack Overflow is a community of 4.7 million programmers, just like you, helping each other.
+            <br>
+                <br>Join them; it only takes a minute:<br>
+            <br>
+            <a href="http://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f31742601%2fhow-to-check-internet-connection-on-ios-device" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Join the Stack Overflow community to:</b>
+            <ol id="hiw">
+                <li id="q">Ask programming questions
+                </li>
+                <li id="an">Answer and help your peers
+                </li>
+                <li id="b">Get recognized for your expertise
+                </li>
+            </ol>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <script>
+        StackExchange.ready(function () {
+
+            var location = 0;
+            if ($("body").hasClass("questions-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("question-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("faq-page")) {
+                location = 5;;
+            } else if ($("body").hasClass("home-page")) {
+                location = 3;;
+            }
+
+            $('#tell-me-more').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+                });
+            });
+            $('#herobox #close').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+                });
+                $.cookie("hero", "mini", { path: "/", expires: 365 });
+                $.ajax({
+                    url: "/hero-mini",
+                    success: function (data) {
+                        $("#herobox").fadeOut("fast", function () {
+                            $("#herobox").replaceWith(data);
+                            $("#herobox-mini").fadeIn("fast");
+                        });
+                    }
+                });
+                return false;
+            });
+        });
+
+    </script>
+</div>
+			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/31742601/how-to-check-internet-connection-on-ios-device" class="question-hyperlink">How to check internet connection on iOS device?</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="31742601" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1800635848",4).setZone(43); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1800635848"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjozMjI1MTQsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMjY5MTg0LCJkaSI6IjdhM2MyYmZjY2M3NzQ2ZjNhY2JkNjc1ZjJiNjk3ZTEyIiwiZG0iOjEsImZjIjoxMzY3OTM3LCJmbCI6ODY0MjI1LCJpcCI6IjEyMy4yMzYuMTc2LjY3Iiwia3ciOiJpb3Msb2JqZWN0aXZlLWMsY29jb2EtdG91Y2gscmVhY2hhYmlsaXR5IiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY28uaW4iLCJzdCI6ODI3NywidWsiOiJ1ZTEtNDEzZmJhZjIxODg2NDk1NDllNzQ5YzhjNDMxYTQ3NGQiLCJ6biI6NDMsInRzIjoxNDU5NDk3MDMyMjgwLCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsxODAwNjM1ODQ4IiwidXIiOiJodHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vam9icy9yZW1vdGU_bWVkPXpyayZyZWY9Y2FuZGlkYXRlcy13ZmhfbGItd2ZoLWtpZC13b3JrLW9uLXdvcmsifQ&amp;s=5m_dpp3htffGP8Hp6AEdwHrnq44" rel="nofollow" target="_blank" title=""><img src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/ca0f847878fc4be5bac353194231ef81.png" title="" alt="" height="90" border="0" width="728"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li><li><label><input value="16" name="downvoteReason" type="radio">Other</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/i_002.gif" style="position:absolute;" height="0px" border="0" width="0px"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="31742601" type="hidden">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+        <div class="favoritecount"><b>1</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I'm wondering how I can check if the user is connect to internet through WIFI or cellular data 3G or 4G.</p>
+
+<p>Also I don't want to check if a website is reachable or not, the 
+thing that I want to check if there is internet on the device or not. I 
+tried to look over the internet all that I see is that they check if the
+ website is reachable or not using the <code>Rechability</code> class.</p>
+
+<p><strong>I want to check if the user has internet or not when he opens my application.</strong></p>
+
+<p><em>I'm using Xcode6 with Objective-C.</em></p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/ios" class="post-tag js-gps-track" title="show questions tagged 'ios'" rel="tag">ios</a> <a href="http://stackoverflow.com/questions/tagged/objective-c" class="post-tag js-gps-track" title="show questions tagged 'objective-c'" rel="tag">objective-c</a> <a href="http://stackoverflow.com/questions/tagged/cocoa-touch" class="post-tag js-gps-track" title="show questions tagged 'cocoa-touch'" rel="tag">cocoa-touch</a> <a href="http://stackoverflow.com/questions/tagged/reachability" class="post-tag js-gps-track" title="show questions tagged 'reachability'" rel="tag">reachability</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/31742601" title="short permalink to this question" class="short-link" id="link-post-31742601">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/31742601/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/31742601/revisions" title="show all edits to this post">edited <span title="2015-07-31 09:52:28Z" class="relativetime">Jul 31 '15 at 9:52</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2227743/eric-d"><div class="gravatar-wrapper-32"><img src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/X3RGN.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2227743/eric-d">Eric D</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 19901" dir="ltr">19.9k</span><span title="10 gold badges"><span class="badge1"></span><span class="badgecount">10</span></span><span title="28 silver badges"><span class="badge2"></span><span class="badgecount">28</span></span><span title="53 bronze badges"><span class="badge3"></span><span class="badgecount">53</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2015-07-31 09:22:52Z" class="relativetime">Jul 31 '15 at 9:22</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/4934615/snipercoder"><div class="gravatar-wrapper-32"><img src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/G37xT.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/4934615/snipercoder">SniperCoder</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">385</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="12 bronze badges"><span class="badge3"></span><span class="badgecount">12</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-31742601" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-51419353" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">my question is not 
+duplicated, this tutorial is checking for google server reachability, 
+however my question is how to check the internet without trying to 
+connect to a website server</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/4934615/snipercoder" title="385 reputation" class="comment-user owner">SniperCoder</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment51419353_31742601"><span title="2015-07-31 09:34:44Z" class="relativetime-clean">Jul 31 '15 at 9:34</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-54683444" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">You can also see here: <a href="http://stackoverflow.com/questions/6129219/check-if-iphone-is-connected-to-the-internet/33447730#33447730">http://stackoverflow.com/questions/6129219/check-if-iphone-is-connected-to-the-‌​internet/33447730#33447730</a></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1509601/manish-verma" title="167 reputation" class="comment-user">Manish Verma</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment54683444_31742601"><span title="2015-10-31 03:28:17Z" class="relativetime-clean">Oct 31 '15 at 3:28</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-31742601" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								5 Answers
+                                <span style="display:none;" itemprop="answerCount">5</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/31742601/how-to-check-internet-connection-on-ios-device?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active">
+            active</a>
+        <a href="http://stackoverflow.com/questions/31742601/how-to-check-internet-connection-on-ios-device?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/31742601/how-to-check-internet-connection-on-ios-device?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="31742631"></a>
+<div id="answer-31742631" class="answer accepted-answer" data-answerid="31742631" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="31742631" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Use this code and import <code>Reachability.h</code> file</p>
+
+<pre style="" class="lang-c prettyprint prettyprinted"><code><span class="kwd">if</span><span class="pln"> </span><span class="pun">([[</span><span class="typ">Reachability</span><span class="pln"> reachabilityForInternetConnection</span><span class="pun">]</span><span class="pln">currentReachabilityStatus</span><span class="pun">]==</span><span class="typ">NotReachable</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+         </span><span class="com">//connection unavailable</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">else</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+         </span><span class="com">//connection available</span><span class="pln">
+    </span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/31742631" title="short permalink to this answer" class="short-link" id="link-post-31742631">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/31742631/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-07-31 09:24:18Z" class="relativetime">Jul 31 '15 at 9:24</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/3095498/jay-bhalani"><div class="gravatar-wrapper-32"><img src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/5CZT0.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/3095498/jay-bhalani">Jay Bhalani</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,996</span><span title="6 gold badges"><span class="badge1"></span><span class="badgecount">6</span></span><span title="14 silver badges"><span class="badge2"></span><span class="badgecount">14</span></span><span title="27 bronze badges"><span class="badge3"></span><span class="badgecount">27</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-31742631" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-51419759" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">i could not find the Reachability.h file!</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/4934615/snipercoder" title="385 reputation" class="comment-user owner">SniperCoder</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment51419759_31742631"><span title="2015-07-31 09:46:12Z" class="relativetime-clean">Jul 31 '15 at 9:46</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-51420054" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@SniperCoder Download and put this class in your project. <a href="https://github.com/tonymillion/Reachability" rel="nofollow">github.com/tonymillion/Reachability</a></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/3095498/jay-bhalani" title="1996 reputation" class="comment-user">Jay Bhalani</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment51420054_31742631"><span title="2015-07-31 09:53:57Z" class="relativetime-clean">Jul 31 '15 at 9:53</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-51424519" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@SniperCoder this code is worked for you ??</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/3095498/jay-bhalani" title="1996 reputation" class="comment-user">Jay Bhalani</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment51424519_31742631"><span title="2015-07-31 11:56:50Z" class="relativetime-clean">Jul 31 '15 at 11:56</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-31742631" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1909889828",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1909889828"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjozMjI1MTQsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMjY3NTkwLCJkaSI6ImFiOTM5Y2JhNzhjNjRlYjE4NTIxNTEwOTBhMDU3NGY1IiwiZG0iOjEsImZjIjoxMzY1OTUzLCJmbCI6ODY0MjI1LCJpcCI6IjEyMy4yMzYuMTc2LjY3Iiwia3ciOiJpb3Msb2JqZWN0aXZlLWMsY29jb2EtdG91Y2gscmVhY2hhYmlsaXR5IiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY28uaW4iLCJzdCI6ODI3NywidWsiOiJ1ZTEtNDEzZmJhZjIxODg2NDk1NDllNzQ5YzhjNDMxYTQ3NGQiLCJ6biI6NDQsInRzIjoxNDU5NDk3MDMyMjgyLCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsxOTA5ODg5ODI4IiwidXIiOiJodHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vam9icy9yZW1vdGU_bWVkPXpyayZyZWY9Y2FuZGlkYXRlcy13ZmhfbGItd2ZoLXBhamFtYXMifQ&amp;s=rSDNgXaKpKe-xXi_BHIiiNEqcl8" rel="nofollow" target="_blank" title=""><img src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/1e340e02d6c4484cb02bb42c8da9778a.png" title="" alt="" height="90" border="0" width="728"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li><li><label><input value="16" name="downvoteReason" type="radio">Other</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/i.gif" style="position:absolute;" height="0px" border="0" width="0px"></div>
+  
+<a name="31744358"></a>
+<div id="answer-31744358" class="answer" data-answerid="31744358" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="31744358" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">5</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>First Download Reachability  classes from this Link:<br>
+<a href="https://github.com/tonymillion/Reachability">Rechability from Github</a></p>
+
+<p>Add Instance of Reachability in <strong>AppDelegate.h</strong>  </p>
+
+<pre style="" class="lang-c prettyprint prettyprinted"><code><span class="lit">@property</span><span class="pln"> </span><span class="pun">(</span><span class="pln">nonatomic</span><span class="pun">)</span><span class="pln"> </span><span class="typ">Reachability</span><span class="pln"> </span><span class="pun">*</span><span class="pln">hostReachability</span><span class="pun">;</span><span class="pln">
+</span><span class="lit">@property</span><span class="pln"> </span><span class="pun">(</span><span class="pln">nonatomic</span><span class="pun">)</span><span class="pln"> </span><span class="typ">Reachability</span><span class="pln"> </span><span class="pun">*</span><span class="pln">internetReachability</span><span class="pun">;</span><span class="pln">
+</span><span class="lit">@property</span><span class="pln"> </span><span class="pun">(</span><span class="pln">nonatomic</span><span class="pun">)</span><span class="pln"> </span><span class="typ">Reachability</span><span class="pln"> </span><span class="pun">*</span><span class="pln">wifiReachability</span><span class="pun">;</span></code></pre>
+
+<p>Import Reachability in your AppDelegate and just copy and past this code in your <strong>Appdelegate.m</strong>  </p>
+
+<pre style="" class="lang-c prettyprint prettyprinted"><code><span class="pun">-</span><span class="pln"> </span><span class="pun">(</span><span class="pln">id</span><span class="pun">)</span><span class="pln">init
+</span><span class="pun">{</span><span class="pln">
+    self </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="pln">super init</span><span class="pun">];</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">self </span><span class="pun">!=</span><span class="pln"> nil</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="com">//[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];</span><span class="pln">
+        </span><span class="typ">NSString</span><span class="pln"> </span><span class="pun">*</span><span class="pln">remoteHostName </span><span class="pun">=</span><span class="pln"> </span><span class="pun">@</span><span class="str">"www.google.com"</span><span class="pun">;</span><span class="pln">
+        self</span><span class="pun">.</span><span class="pln">hostReachability </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="typ">Reachability</span><span class="pln"> reachabilityWithHostName</span><span class="pun">:</span><span class="pln">remoteHostName</span><span class="pun">];</span><span class="pln">
+        </span><span class="pun">[</span><span class="pln">self</span><span class="pun">.</span><span class="pln">hostReachability startNotifier</span><span class="pun">];</span><span class="pln">
+
+        self</span><span class="pun">.</span><span class="pln">internetReachability </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="typ">Reachability</span><span class="pln"> reachabilityForInternetConnection</span><span class="pun">];</span><span class="pln">
+        </span><span class="pun">[</span><span class="pln">self</span><span class="pun">.</span><span class="pln">internetReachability startNotifier</span><span class="pun">];</span><span class="pln">
+
+        self</span><span class="pun">.</span><span class="pln">wifiReachability </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="typ">Reachability</span><span class="pln"> reachabilityForLocalWiFi</span><span class="pun">];</span><span class="pln">
+        </span><span class="pun">[</span><span class="pln">self</span><span class="pun">.</span><span class="pln">wifiReachability startNotifier</span><span class="pun">];</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> self</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">  </span></code></pre>
+
+<p>Add this method in your Common Class.  </p>
+
+<pre style="" class="lang-c prettyprint prettyprinted"><code><span class="com">/*================================================================================================
+ Check Internet Rechability
+ =================================================================================================*/</span><span class="pln">
+</span><span class="pun">+(</span><span class="pln">BOOL</span><span class="pun">)</span><span class="pln">checkIfInternetIsAvailable
+</span><span class="pun">{</span><span class="pln">
+    BOOL reachable </span><span class="pun">=</span><span class="pln"> NO</span><span class="pun">;</span><span class="pln">
+    </span><span class="typ">NetworkStatus</span><span class="pln"> netStatus </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="pln">APP_DELEGATE1</span><span class="pun">.</span><span class="pln">internetReachability currentReachabilityStatus</span><span class="pun">];</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">netStatus </span><span class="pun">==</span><span class="pln"> </span><span class="typ">ReachableViaWWAN</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> netStatus </span><span class="pun">==</span><span class="pln"> </span><span class="typ">ReachableViaWiFi</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        reachable </span><span class="pun">=</span><span class="pln"> YES</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">else</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        reachable </span><span class="pun">=</span><span class="pln"> NO</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> reachable</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">  </span></code></pre>
+
+<p>Note that <strong>APP_DELEGATE1</strong> Is an instance of AppDelegate  </p>
+
+<pre style="" class="lang-c prettyprint prettyprinted"><code><span class="com">/* AppDelegate object */</span><span class="pln">
+</span><span class="com">#define</span><span class="pln"> APP_DELEGATE1 </span><span class="pun">((</span><span class="typ">AppDelegate</span><span class="pun">*)[[</span><span class="typ">UIApplication</span><span class="pln"> sharedApplication</span><span class="pun">]</span><span class="pln"> </span><span class="kwd">delegate</span><span class="pun">])</span><span class="pln">  </span></code></pre>
+
+<p>You can check internet connectivity anywhere in app using this method.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/31744358" title="short permalink to this answer" class="short-link" id="link-post-31744358">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/31744358/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-07-31 10:50:23Z" class="relativetime">Jul 31 '15 at 10:50</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/3378413/mihir-oza"><div class="gravatar-wrapper-32"><img src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/vMVdQ.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/3378413/mihir-oza">Mihir Oza</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">939</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="8 silver badges"><span class="badge2"></span><span class="badgecount">8</span></span><span title="25 bronze badges"><span class="badge3"></span><span class="badgecount">25</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-31744358" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-31744358" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="31744858"></a>
+<div id="answer-31744858" class="answer" data-answerid="31744858" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="31744858" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>it's simple , you can use following method to check internet connection .  </p>
+
+<pre style="" class="lang-c prettyprint prettyprinted"><code><span class="pun">-(</span><span class="pln">BOOL</span><span class="pun">)</span><span class="typ">IsConnectionAvailable</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">Reachability</span><span class="pln"> </span><span class="pun">*</span><span class="pln">reachability </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="typ">Reachability</span><span class="pln"> reachabilityForInternetConnection</span><span class="pun">];</span><span class="pln">
+
+    </span><span class="typ">NetworkStatus</span><span class="pln"> networkStatus </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="pln">reachability currentReachabilityStatus</span><span class="pun">];</span><span class="pln">
+
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">!(</span><span class="pln">networkStatus </span><span class="pun">==</span><span class="pln"> </span><span class="typ">NotReachable</span><span class="pun">);</span><span class="pln">    
+</span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/31744858" title="short permalink to this answer" class="short-link" id="link-post-31744858">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/31744858/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-07-31 11:15:44Z" class="relativetime">Jul 31 '15 at 11:15</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/3790348/dibin77"><div class="gravatar-wrapper-32"><img src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/5d4b13dd33a6e2f74786049c00c85d59.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/3790348/dibin77">Dibin77</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">58</span><span title="4 bronze badges"><span class="badge3"></span><span class="badgecount">4</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-31744858" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-31744858" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="31742772"></a>
+<div id="answer-31742772" class="answer" data-answerid="31742772" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="31742772" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Hope this helps you:</p>
+
+<p><strong>Utils.h</strong></p>
+
+<pre style="" class="lang-c prettyprint prettyprinted"><code><span class="pln"> </span><span class="com">#import &lt;Foundation/Foundation.h&gt;</span><span class="pln">
+ </span><span class="lit">@interface</span><span class="pln"> </span><span class="typ">Utils</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="typ">NSObject</span><span class="pln">
+
+ </span><span class="pun">+(</span><span class="pln">BOOL</span><span class="pun">)</span><span class="pln">isNetworkAvailable</span><span class="pun">;</span><span class="pln">
+
+ </span><span class="lit">@end</span></code></pre>
+
+<p><strong>utils.m</strong></p>
+
+<pre style="" class="lang-c prettyprint prettyprinted"><code><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="pun">(</span><span class="pln">BOOL</span><span class="pun">)</span><span class="pln">isNetworkAvailable
+</span><span class="pun">{</span><span class="pln">
+      </span><span class="typ">CFNetDiagnosticRef</span><span class="pln"> dReference</span><span class="pun">;</span><span class="pln">
+      dReference </span><span class="pun">=</span><span class="pln"> </span><span class="typ">CFNetDiagnosticCreateWithURL</span><span class="pln"> </span><span class="pun">(</span><span class="pln">NULL</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="pln">__bridge </span><span class="typ">CFURLRef</span><span class="pun">)[</span><span class="pln">NSURL </span><span class="typ">URLWithString</span><span class="pun">:@</span><span class="str">"www.apple.com"</span><span class="pun">]);</span><span class="pln">
+
+      </span><span class="typ">CFNetDiagnosticStatus</span><span class="pln"> status</span><span class="pun">;</span><span class="pln">
+      status </span><span class="pun">=</span><span class="pln"> </span><span class="typ">CFNetDiagnosticCopyNetworkStatusPassively</span><span class="pln"> </span><span class="pun">(</span><span class="pln">dReference</span><span class="pun">,</span><span class="pln"> NULL</span><span class="pun">);</span><span class="pln">
+
+      </span><span class="typ">CFRelease</span><span class="pln"> </span><span class="pun">(</span><span class="pln">dReference</span><span class="pun">);</span><span class="pln">
+
+      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> status </span><span class="pun">==</span><span class="pln"> kCFNetDiagnosticConnectionUp </span><span class="pun">)</span><span class="pln">
+      </span><span class="pun">{</span><span class="pln">
+          </span><span class="typ">NSLog</span><span class="pln"> </span><span class="pun">(@</span><span class="str">"Connection is Available"</span><span class="pun">);</span><span class="pln">
+          </span><span class="kwd">return</span><span class="pln"> YES</span><span class="pun">;</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+      </span><span class="kwd">else</span><span class="pln">
+      </span><span class="pun">{</span><span class="pln">
+          </span><span class="typ">NSLog</span><span class="pln"> </span><span class="pun">(@</span><span class="str">"Connection is down"</span><span class="pun">);</span><span class="pln">
+          </span><span class="kwd">return</span><span class="pln"> NO</span><span class="pun">;</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span></code></pre>
+
+<p><strong>//Now use this in required class</strong></p>
+
+<pre style="" class="lang-c prettyprint prettyprinted"><code><span class="pun">-</span><span class="pln"> </span><span class="pun">(</span><span class="typ">IBAction</span><span class="pun">)</span><span class="typ">MemberSubmitAction</span><span class="pun">:(</span><span class="pln">id</span><span class="pun">)</span><span class="pln">sender </span><span class="pun">{</span><span class="pln">
+   </span><span class="kwd">if</span><span class="pun">([</span><span class="typ">Utils</span><span class="pln"> isNetworkAvailable</span><span class="pun">]</span><span class="pln"> </span><span class="pun">==</span><span class="pln">YES</span><span class="pun">){</span><span class="pln">
+
+      </span><span class="typ">NSlog</span><span class="pun">(@</span><span class="str">"Network Connection available"</span><span class="pun">);</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+
+ </span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/31742772" title="short permalink to this answer" class="short-link" id="link-post-31742772">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/31742772/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2015-07-31 09:30:31Z" class="relativetime">Jul 31 '15 at 9:30</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/4435670/sujania"><div class="gravatar-wrapper-32"><img src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/eAKbS.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/4435670/sujania">Sujania</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,157</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="11 silver badges"><span class="badge2"></span><span class="badgecount">11</span></span><span title="35 bronze badges"><span class="badge3"></span><span class="badgecount">35</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-31742772" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-31742772" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="31743199"></a>
+<div id="answer-31743199" class="answer" data-answerid="31743199" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="31743199" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Try this</p>
+
+<p>check this link for Reachability file</p>
+
+<p><a href="https://github.com/keithpitt/Reachability" rel="nofollow">Reachability</a></p>
+
+<p>import this file in your .m and then write code</p>
+
+<p>//This is to check internet connection</p>
+
+<pre style="" class="lang-c prettyprint prettyprinted"><code><span class="pln">  BOOL hasInternetConnection </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[[</span><span class="typ">Reachability</span><span class="pln"> reachabilityForInternetConnection</span><span class="pun">]</span><span class="pln"> isReachable</span><span class="pun">];</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">hasInternetConnection</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+               </span><span class="com">// your code</span><span class="pln">
+    </span><span class="pun">}</span></code></pre>
+
+<p>Hope it helps.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/31743199" title="short permalink to this answer" class="short-link" id="link-post-31743199">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/31743199/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-07-31 09:48:51Z" class="relativetime">Jul 31 '15 at 9:48</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/4319511/pradumna-patil"><div class="gravatar-wrapper-32"><img src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/415ea96c97c3ac999ff86264b998b358.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/4319511/pradumna-patil">Pradumna Patil</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">844</span><span title="5 silver badges"><span class="badge2"></span><span class="badgecount">5</span></span><span title="23 bronze badges"><span class="badge3"></span><span class="badgecount">23</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-31743199" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-31743199" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/31742601/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="31742601" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+                            <input name="referrer" value="https://www.google.co.in" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.options.snippets.enabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="3ac3606021f8409c62a06cd41252fa6c" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f31742601%2fhow-to-check-internet-connection-on-ios-device%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input name="use-google" class="use-google" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" placeholder="required, but never shown" type="email">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'http%3a%2f%2fstackoverflow.com%2fquestions%2f31742601%2fhow-to-check-internet-connection-on-ios-device%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" />
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/ios" class="post-tag" title="show questions tagged 'ios'" rel="tag">ios</a> <a href="http://stackoverflow.com/questions/tagged/objective-c" class="post-tag" title="show questions tagged 'objective-c'" rel="tag">objective-c</a> <a href="http://stackoverflow.com/questions/tagged/cocoa-touch" class="post-tag" title="show questions tagged 'cocoa-touch'" rel="tag">cocoa-touch</a> <a href="http://stackoverflow.com/questions/tagged/reachability" class="post-tag" title="show questions tagged 'reachability'" rel="tag">reachability</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes"><div class="module" id="unikong-sidebar-module"></div>
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2015-07-31 09:22:52Z"><b>8 months ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>3524 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/31742601/how-to-check-internet-connection-on-ios-device?lastactivity" class="lastactivity-link" title="2015-07-31 11:15:44Z">8 months ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk892265730",[5,17,2221]).setZone(45); });
+            </script>
+            
+        <div id="hireme">
+            <script>
+;"use strict";(function(n){function tt(n,i,r){var u=t.createElement("script"),e="onreadystatechange",o="onload",f="readyState",s=!1;u.async=!0;u.src=n;typeof i=="function"&&(u[o]=u[e]=function(){s||u[f]&&u[f]!=="loaded"&&u[f]!=="complete"||(s=!0,typeof i=="function"&&i(u),u[o]=u[e]=null,r&&u.parentNode.removeChild(u))});ut.appendChild(u)}function it(n){var i=t.createElement("link");i.type="text/css";i.rel="stylesheet";i.href=n;ft.appendChild(i)}function ct(){var n=i.StackExchange,t="options",r="user";return n&&n[t]&&n[t][r]&&n[t][r].accountId}function lt(n){var t,i;return n=ot(r.hash?r.hash.substr(1):"",n||{}),t=n.ac||n.accountId||ct(),t&&(n.ac=t),n.tags||(i=nt(),i.length>0&&(n.tags=i.join(";"))),n.host=r.host.replace(/\.internal$/,""),n}function at(n,t,i,r){var c=h(n);if(c===null)return function(){};var e=null,u=null,l=f(),a=function a(){d(c)?(s(e),r(!1,f()-l)):u=o(a,t)};return u=o(a,t),i!==undefined&&(e=o(function(){s(u);r(!0,f()-l)},i)),function(){s(u);s(e)}}function vt(){var u=r.hash.indexOf("large=1")!==-1||!y()||h("#careersadsdoublehigh"),f=u?1:2,e=a(["hireme","clc-sb"],v),n=[f+"="+e],i=a(["careers1","clc-tlb"],v),t;return i&&n.push("5="+i),t=a(["careers3","clc-mlb"],v),t&&n.push("6="+t),n.join("&")}function rt(n,t){var s=b({},e,{zones:e.zones||vt()}),r=lt(s),u,o;n&&(r.azt=1);t&&(r.lw=t);typeof i.innerWidth=="number"&&(r.bw=i.innerWidth);w&&(r.ver=w);u=["zones","ip","ac","eng","prov","tags","theme","at","remote","seed","lw","azt","sysadmin","bw","nocpm","jobview","cpview","ver","host","cp"];o=p+"?"+st(r,u);l=f();tt(o)}function yt(n){function h(){u.forEach(it);e.forEach(function(n){return pt(n,t[n],s,o)});typeof i.clc_after_load=="function"&&i.clc_after_load()}var t=n.cr,r=n.h,u=n.st,e=Object.keys(t),o=l?f()-l:0,s="//"+r+"/ct";h()}function pt(n,t,i,r){var s=t.cl,c=t.cn,e=t.an,l=t.utm,o=(s||[]).join(" "),f=h("#"+n);f&&(o&&(f.className+=" "+o),f.innerHTML=c.replace("&pt=0","&pt="+(r||0)),f.onmousedown=function(n){for(var t=n.target,r,o,s;t.tagName!=="A"&&t!==f;)t=t.parentNode;t!==f&&(r=[],e&&r.push("an="+e),o=[].filter.call(t.attributes,function(n){return/^data-/.test(n.name)}),o.length>0&&o.forEach(function(n){var t=n.name.replace(/^data-/,"");r.push(u(t)+"="+u(n.value))}),r.push("utm="+u(et+l)),s="",r.length>0&&(s="?"+r.join("&")),t.href=i+s)})}function wt(n){var i=t.createElement("a");return i.href=n,i.host}function bt(){var i,n;y()?(n=at(c,20,i,rt),o(function(){var r=h(c),i;d(r)||(r.parentNode.removeChild(r),typeof n=="function"&&n(),i=t.createElement("img"),i.src="//"+wt(p)+"/to.gif",i.style.display="none",t.body.appendChild(i))},2e3)):rt()}var p=n.u,e=n.o,w=n.c,y;e=e||{};var b=Object.assign||function(n){for(var i,r,t=1;t<arguments.length;t++){i=arguments[t];for(r in i)Object.prototype.hasOwnProperty.call(i,r)&&(n[r]=i[r])}return n},i=window,r=i.location,u=i.encodeURIComponent,k=i.decodeURIComponent,t=i.document,ut=t.body,ft=t.getElementsByTagName("head")[0],o=i.setTimeout,s=i.clearTimeout,et="&utm_source="+r.hostname+"&utm_medium=ad&utm_campaign=",c="#sidebar [id^=adzerk].everyonelovesstackoverflow",l=0,f=function(){return(new Date).getTime()},ot=function(n,t){return n.split(/\&/g).reduce(function(n,t){var i=t.split("=");return n[k(i[0])]=k(i[1]),n},t||{})},st=function(n,t){return Object.keys(n).filter(function(n){return t.indexOf(n)!==-1}).map(function(t){return u(t)+"="+u(n[t])}).join("&")},d=function(n){return n.innerHTML.replace(/\s+$/g,"")},g=t.querySelectorAll.bind(t),h=t.querySelector.bind(t),ht=t.getElementById.bind(t),a=function(n,t){return n.filter(t)[0]},nt=function(){return[].map.call(g(".post-taglist .post-tag"),function(n){return n.textContent})},v=function(n){return!!ht(n)};y=function(){return g(c).length>0};i.clc=b(window.clc||{},{init:yt,load:bt,ls:tt,as:it,tags:nt})}).call(null, {"c":"7f0e2c9","u":"//clc.stackoverflow.com/p.js"});"use strict";var allowedHosts=["stackoverflow.com","serverfault.com"];(allowedHosts[0]==="*"||allowedHosts.indexOf(location.hostname)!==-1)&&window.clc.load();            </script>
+        </div>
+			<div style="margin-bottom: 10px;">
+        
+
+<style type="text/css">
+#newsletter-ad {
+    width: 270px;
+    height: 250px;
+    overflow: hidden;
+    background: url('//cdn.sstatic.net/Sites/stackoverflow/img/newsletter-ad.png?v=3');
+    padding: 0 15px 0 15px;
+}
+#newsletter-ad-header {
+    margin-top: 60px;
+}
+#newsletter-ad ul {
+    margin: 1em 0 1em 1.5em;
+}
+#newsletter-ad ul li {
+    margin-bottom: 5px;
+}
+#newsletter-signup-container {
+    text-align: center;
+}
+#newsletter-preview-container {
+    margin-top: 10px;
+    text-align: center;
+}
+#newsletter-email-input {
+    width: 200px;
+}
+</style>
+
+<script>
+    StackExchange.ready(function () {
+        StackExchange.newsletterAd.init();
+    });
+</script>
+
+<div id="newsletter-ad">
+        <p id="newsletter-ad-header">Get the <b>weekly newsletter!</b> In it, you'll get:</p>
+        <ul>
+            <li>The week's top questions and answers</li>
+            <li>Important community announcements</li>
+            <li>Questions that need answers</li>
+        </ul>
+    <div id="newsletter-signup-container"><input id="newsletter-signup" value="Sign up for the newsletter" type="button"></div>
+    <p id="newsletter-preview-container">see an <a href="http://stackexchange.com/newsletters/newsletter?site=stackoverflow.com" id="newsletter-preview">example newsletter</a></p>
+    <div class="dno">
+        
+<p class="privacy-policy-agreement">
+By subscribing, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">
+    </div>
+</div>
+
+    </div>  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/6129219?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/6129219/check-if-iphone-is-connected-to-the-internet?lq=1" class="question-hyperlink">Check if iPhone is connected to the internet</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/33559544?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">-2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/33559544/internet-connection-called-two-time?lq=1" class="question-hyperlink">Internet Connection called two Time</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/190908?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">753
+    </div>
+</a><a href="http://stackoverflow.com/questions/190908/how-can-i-disable-the-uitableview-selection-highlighting?rq=1" class="question-hyperlink">How can I disable the UITableView selection highlighting?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/805547?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">884
+    </div>
+</a><a href="http://stackoverflow.com/questions/805547/how-to-sort-an-nsmutablearray-with-custom-objects-in-it?rq=1" class="question-hyperlink">How to sort an NSMutableArray with custom objects in it?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/1083701?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">968
+    </div>
+</a><a href="http://stackoverflow.com/questions/1083701/how-to-check-for-an-active-internet-connection-on-ios-or-osx?rq=1" class="question-hyperlink">How to check for an active Internet connection on iOS or OSX?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/3953717?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">3
+    </div>
+</a><a href="http://stackoverflow.com/questions/3953717/where-should-i-perform-a-reachability-check?rq=1" class="question-hyperlink">Where should I perform a Reachability check?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/5618683?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/5618683/where-to-put-reachability-check-to-ensure-data-to-be-loaded-before-viewing-it?rq=1" class="question-hyperlink">Where to put reachability check to ensure data to be loaded before viewing it?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/8179315?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/8179315/how-to-run-method-on-ios-when-the-users-device-is-connected-to-the-internet?rq=1" class="question-hyperlink">How to run method on iOS when the user's device is connected to the internet?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/15146607?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">7
+    </div>
+</a><a href="http://stackoverflow.com/questions/15146607/how-to-detect-loss-of-internet-reachability-when-wifi-source-loses-connection?rq=1" class="question-hyperlink">How to detect loss of internet reachability when wifi source loses connection?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/16628543?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/16628543/how-do-i-use-reachability-to-check-if-theres-an-internet-connection-and-if-not?rq=1" class="question-hyperlink">How do I use Reachability to check if there's an internet connection, and if not, do something. (Basically use as a boolean.)</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/30028811?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/30028811/checking-internet-connection-with-pnreachability-class?rq=1" class="question-hyperlink">Checking internet connection with PNReachability class</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/33428944?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/33428944/what-is-the-latest-and-effective-method-to-check-internet-connection-in-ios?rq=1" class="question-hyperlink">What is the latest and effective method to check internet connection in iOS?</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/62313/how-can-i-invest-in-an-index-fund-but-negatively-screen-out-certain-categories-o" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I invest in an index fund but negatively 
+screen out certain categories of socially irresponsible investments?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/1058943/tiny-copper-waffle-squares-inside-computer" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Tiny copper waffle squares inside computer
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/260986/is-the-konami-code-for-unikong-inaccurate" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is the Konami code for Unikong inaccurate?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-ux" title="User Experience Stack Exchange"></div><a href="http://ux.stackexchange.com/questions/92125/currency-formatting-to-usd-in-a-text-field" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:102 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Currency formatting to $USD in a text field
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="http://aviation.stackexchange.com/questions/26559/do-landings-in-a-simulator-count-towards-landing-currency-faa-in-the-usa" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do Landings in a Simulator Count Towards Landing Currency? (FAA in the USA)
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-salesforce" title="Salesforce Stack Exchange"></div><a href="http://salesforce.stackexchange.com/questions/116337/how-does-the-rollup-helper-app-run-in-real-time" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:459 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How does the Rollup Helper app run in real-time?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/76716/determine-the-type-of-an-input" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Determine the type of an input
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="http://mathoverflow.net/questions/235003/special-topics-to-include-in-course-in-algebraic-number-theory" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Special topics to include in course in algebraic number theory
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/30012/a-ship-departs-from-le-havre" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    A ship departs from Le Havre
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/118988/keylogger-web-application-protection" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Keylogger web application protection
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-german" title="German Language Stack Exchange"></div><a href="http://german.stackexchange.com/questions/28941/to-walk-in-someones-shadow-auf-deutsch" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:253 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    "To walk in someone's shadow" auf deutsch?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="http://mathoverflow.net/questions/234946/do-non-stable-banach-spaces-exist" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do non-stable Banach spaces exist?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/118975/a-secret-in-a-url" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    A secret in a URL
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/77949/two-players-are-leaving-and-there-are-conflicting-desires-for-what-to-do-with-t" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Two players are leaving, and there are conflicting 
+desires for what to do with their PCs. How do I make everyone happy?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-latin" title="Latin Language Stack Exchange"></div><a href="http://latin.stackexchange.com/questions/653/is-thomas-hobbes-translation-of-nosce-te-ispum-as-read-thyself-valid" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:644 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is Thomas Hobbes' translation of "nosce te ispum" as "read thyself" valid?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/29937/challenge-for-lovers" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Challenge for lovers
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/260963/can-i-ride-the-unicorn-if-not-can-i-kill-the-unicorn" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can I ride the unicorn? If not, can I kill the unicorn?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/1058602/alternative-for-tail-f-that-follows-filename" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Alternative for "tail -f" that follows filename
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/316429/what-is-the-word-for-the-smell-of-rain" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the word for "the smell of rain"?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/39183/whats-the-quickest-way-to-add-oceans-to-a-planet" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What's the quickest way to add oceans to a planet?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="http://stats.stackexchange.com/questions/204843/is-this-the-solution-to-the-p-value-problem" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is this the solution to the p-value problem?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1722332/what-is-the-difference-between-the-three-types-of-logarithms" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the difference between the three types of logarithms?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1719816/is-there-a-math-function-to-find-an-element-in-a-vector" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there a math function to find an element in a vector?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/111479/rounding-the-corners-of-a-shape" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Rounding the Corners of a Shape
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/31742601" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/31742601/ivc/120d');});
+</script>
+<noscript>
+    <div><img src="/posts/31742601/ivc/120d" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-c</div></div>
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.4.1.3421
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () {
+            setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+        ados_setKeywords('ios,objective-c,cocoa-touch,reachability');; ados_load();
+    });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');
+                        ga('set', 'dimension2', '|ios|objective-c|cocoa-touch|reachability|');         ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>
+        
+        <script>
+            function closeGame() {
+                $('#unikong-lightbox').remove();
+                $('#unikong-modal').remove();
+            };
+            StackExchange.ready(function () {
+                StackExchange.loadJsFile("unikong/unikong.js?v=88364ab026dc", true).done(function () {
+                    if (StackExchange.Unikong.launcher.init()) {
+                            $("<link rel='stylesheet' type='text/css' href='//cdn.sstatic.net/shared/unikong.css?v=04b8b8647bc4'/>").appendTo("head");
+                    }
+                });
+            })
+        </script>
+
+    
+    
+<img style="display: none;" src="objective%20c%20-%20How%20to%20check%20internet%20connection%20on%20iOS%20device%3F%20-%20Stack%20Overflow_files/to.gif"></body></html>
